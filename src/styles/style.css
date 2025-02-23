@@ -1,0 +1,150 @@
+/* Reset básico de estilo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e fundo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header e navegação */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff6347;
+}
+
+/* Estilo das seções */
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+.sobre-mim-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sobre-mim-content .texto {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.sobre-mim-content .foto {
+    flex: 1;
+}
+
+.sobre-mim-content img {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Portfólio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-box h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-box p {
+    font-size: 14px;
+    color: #555;
+}
+
+.project-box img {
+    width: 100%;         /* A imagem ocupará toda a largura da célula */
+    height: auto;        /* A altura será ajustada proporcionalmente */
+    border-radius: 8px;  /* Adiciona bordas arredondadas, para manter o estilo consistente */
+    object-fit: cover;   /* Garante que a imagem se ajuste corretamente sem distorcer */
+}
+
+
+/* Skills */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-mim-content {
+        flex-direction: column;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
